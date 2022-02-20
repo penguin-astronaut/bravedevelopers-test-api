@@ -13,14 +13,14 @@ class OperatorController {
   }
 
   async getAll(req, res) {
-    res.json(await Operator.find())
+    res.json(await Operator.find({}, {_id: 0, __v: 0}))
   }
 
   async getOne(req, res) {
     const {slug} = req.params;
-    const operator = await Operator.find({slug});
-    if (operator.length !== 0) {
-      res.json()
+    const operator = await Operator.findOne({slug}, {_id: 0, __v: 0});
+    if (operator) {
+      res.json(operator)
     } else {
       res.sendStatus(404)
     }
