@@ -4,8 +4,8 @@ import Operator from "./Operator.js";
 class OperatorController {
   async create(req, res) {
     try {
-      const {name, img, color} = req.body;
-      const operator = await Operator.create({name, img, color, slug: slug(name)})
+      const {name, img, color, isUserCreated} = req.body;
+      const operator = await Operator.create({name, img, color, slug: slug(name), isUserCreated})
       res.json(operator)
     } catch (e) {
       res.status(500).json(e);
