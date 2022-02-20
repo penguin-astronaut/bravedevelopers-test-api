@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 import dotenv from "dotenv";
 import router from "./router.js";
 
@@ -10,6 +11,7 @@ const DB_URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(router)
 
