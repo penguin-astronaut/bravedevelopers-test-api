@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import router from "./router.js";
 
-const PORT = "3001";
+const PORT = process.env.PORT || "3001";
 const DB_URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.grawh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
 const app = express();
