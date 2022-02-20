@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Post = new mongoose.Schema({
+const Operator = new mongoose.Schema({
   name: {type: String, required: true},
   img: {type: String, required: true},
   color: {type: String, required: true},
@@ -8,4 +8,4 @@ const Post = new mongoose.Schema({
   isUserCreated: {type: Boolean, default: false}
 })
 
-export default mongoose.model('Post', Post)
+export default mongoose.model('Operator', Operator)
